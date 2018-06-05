@@ -58,6 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  // grab keyCode of audio tag and grab keyCdoe of .key class, play aduio when keydown, and add 'playing' class to .key
   function playingSound(e) {
     var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -82,7 +83,8 @@
   keys.forEach(function(key){
     key.addEventListener('transitionend', removeTransition)
   });
-  
+
+  // when keydown, kick playingSound function
   window.addEventListener("keydown", playingSound);
 </script>
 
